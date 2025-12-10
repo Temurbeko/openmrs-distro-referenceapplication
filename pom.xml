@@ -1,3 +1,4 @@
+<!-- openmrs-distro-referenceapplication\pom.xml -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.openmrs</groupId>
@@ -123,6 +124,19 @@
 
   <repositories>
     <repository>
+      <id>local-file</id>
+      <name>Local vendored repo</name>
+      <url>file://${project.basedir}/distro/repo</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+        <updatePolicy>always</updatePolicy>
+      </snapshots>
+    </repository>
+
+    <repository>
       <id>openmrs-repo</id>
       <name>OpenMRS Nexus Repository</name>
       <url>https://mavenrepo.openmrs.org/public</url>
@@ -172,6 +186,13 @@
   </repositories>
 
   <pluginRepositories>
+    <pluginRepository>
+      <id>local-file-plugins</id>
+      <url>file://${project.basedir}/distro/repo</url>
+      <snapshots><enabled>true</enabled></snapshots>
+      <releases><enabled>true</enabled></releases>
+    </pluginRepository>
+
     <pluginRepository>
       <id>openmrs-repo</id>
       <name>OpenMRS Public Repository</name>

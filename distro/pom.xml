@@ -58,7 +58,7 @@
     <billing.version>1.3.3-SNAPSHOT</billing.version>
     <!-- Content Packages -->
     <reference-content.version>1.5.0-SNAPSHOT</reference-content.version>
-    <reference-demo-content.version>1.7.0-SNAPSHOT</reference-demo-content.version>
+    <reference-demo-content.version>1.7.0-testoviy-SNAPSHOT</reference-demo-content.version>
   </properties>
 
   <dependencies>
@@ -308,6 +308,21 @@
       </plugin>
     </plugins>
   </build>
+
+  <repositories>
+    <repository>
+      <id>local-file</id>
+      <name>Local vendored repo</name>
+      <url>file://${project.basedir}/repo</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+        <updatePolicy>always</updatePolicy>
+      </snapshots>
+    </repository>
+  </repositories>
 
   <profiles>
     <profile>
