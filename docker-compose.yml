@@ -1,3 +1,4 @@
+# openmrs-distro-referenceapplication\docker-compose.yml
 services:
   gateway:
     image: openmrs/openmrs-reference-application-3-gateway:${TAG:-qa}
@@ -23,7 +24,7 @@ services:
       - backend
 
   backend:
-    image: openmrs/openmrs-reference-application-3-backend:${TAG:-qa}
+    image: o3-distro-local
     restart: "unless-stopped"
     depends_on:
       - db
