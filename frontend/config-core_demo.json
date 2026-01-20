@@ -2,6 +2,10 @@
   "@openmrs/esm-patient-chart-app": {
     "restrictByVisitLocationTag": true,
     "showUpcomingAppointments": true,
+    "logo": {
+      "src": "${openmrsSpaBase}/patient-chart-logo.png",
+      "alt": "company logo"
+    },
     "extensionSlots": {
       "action-menu-patient-chart-items-slot": {
         "order": ["order-basket-action-menu"]
@@ -373,7 +377,6 @@
       "defaultStatusConceptUuid": "51ae5e4d-b72b-4912-bf31-a17efb690aeb",
       "defaultTransitionStatus": "ca7494ae-437f-4fd0-8aae-b88b9a2ba47d"
     },
-    "visitQueueNumberAttributeUuid": "",
     "defaultFacilityUrl": "",
     "Translation overrides": {
       "en": {
@@ -382,7 +385,7 @@
         "addingPatientToQueue": "Добавление пациента в очередь",
         "addNewQueueService": "Добавить новую услугу очереди",
         "addNewQueueServiceRoom": "Добавить новое помещение услуги очереди",
-        "addPatientToQueue": "Добавить пациента в очередь",
+        "addPatientToQueue": "Добавить очередь",
         "addQueue": "Добавить очередь",
         "addQueueRoom": "Добавить помещение очереди",
         "age": "Возраст",
@@ -951,25 +954,30 @@
     "Translation overrides": {
       "en": {
         "add": "Добавить",
-        "addBill": "Добавить позиции счёта",
-        "addBillableService": "Д Добавлять платную услугу",
+        "addBillableService": "Добавить платную услугу",
+        "addBillItems": "Добавить позиции счёта",
         "addCashPoint": "Добавить кассовую точку",
         "addNewBillableService": "Добавить новую платную услугу",
         "addNewCashPoint": "Добавить новую кассовую точку",
         "addNewPaymentMode": "Добавить новый способ оплаты",
         "addNewService": "Добавить новую услугу",
-        "addPaymentMethod": "Добавить способ оплаты",
+        "addPaymentMethod": "Добавить метод оплаты",
         "addPaymentMode": "Добавить способ оплаты",
         "addPaymentOption": "Добавить вариант оплаты",
+        "address": "Адрес",
+        "allBills": "Все счета",
         "amount": "Сумма",
+        "amountBalance": "Остаток",
         "amountDue": "Сумма к оплате",
         "amountMustBePositive": "Сумма должна быть больше 0",
-        "amountRequired": "Сумма обязательна",
+        "amountPaid": "Оплачено",
+        "amountRequired": "Требуется указать сумму",
         "amountTendered": "Внесено",
-        "amountToWaiveAriaLabel": "Введите сумму к списанию",
-        "amountToWaiveHelper": "Укажите сумму, которую нужно списать со счёта",
+        "amountToWaiveAriaLabel": "Введите сумму для списания",
+        "amountToWaiveHelper": "Укажите сумму, которая будет списана со счёта",
         "amountToWaiveLabel": "Сумма к списанию",
-        "associatedConcept": "Связанный концепт",
+        "associatedConcept": "Связанная концепция",
+        "balance": "Остаток",
         "billableService": "Платная услуга",
         "billableServiceCreated": "Платная услуга создана",
         "billableServiceCreatedSuccessfully": "Платная услуга успешно создана",
@@ -983,12 +991,10 @@
         "billCode": "Код счёта",
         "billCreatedSuccessfully": "Счёт успешно создан",
         "billCreationError": "Ошибка создания счёта",
-        "billedItems": "Выставленные позиции",
-        "billedTo": "Выставлено",
-        "billErrorService": "Ошибка биллингового сервиса",
-        "billing": "Выставление счетов",
-        "billingForm": "Форма выставления счёта",
-        "billingHistory": "История счетов",
+        "billedItems": "Позиции счёта",
+        "billErrorService": "Ошибка сервиса биллинга",
+        "billing": "Биллинг",
+        "billingHistory": "История оплаты",
         "billingSettings": "Настройки биллинга",
         "billItem": "Позиция счёта",
         "billItems": "Позиции счёта",
@@ -998,45 +1004,51 @@
         "billName": "{{billName}}",
         "billPayment": "Оплата счёта",
         "billPaymentError": "Ошибка оплаты счёта",
-        "billPaymentRequiredMessage": "У пациента есть неоплаченный счёт. Рекомендуйте пациенту оплатить его перед получением услуг",
+        "billPaymentRequiredMessage": "У пациента есть неоплаченный счёт. Рекомендуйте пациенту оплатить счёт перед получением услуг",
+        "billProcessed": "Счёт обработан",
         "billProcessedSuccessfully": "Счёт успешно обработан",
         "billProcessingError": "Ошибка обработки счёта",
         "billsTable": "Таблица счетов",
         "billTotal": "Итого по счёту",
-        "billWaiver": "Списание со счёта",
-        "billWaiverError": "Списание не удалось {{error}}",
-        "billWaiverSuccess": "Списание выполнено успешно",
+        "billWaiver": "Списание счёта",
+        "billWaiverError": "Ошибка списания счёта {{error}}",
+        "billWaiverSuccess": "Списание счёта успешно выполнено",
         "birthDate": "Дата рождения",
-        "cashPointConfig": "Настройка кассовых точек",
+        "cashPointConfig": "Конфигурация кассовой точки",
         "cashPointHistory": "История кассовой точки",
         "cashPointLocation": "Расположение кассовой точки",
         "cashPointName": "Название кассовой точки",
         "cashPointNamePlaceholder": "Например, Касса аптеки",
-        "cashPointNameRequired": "Название кассовой точки обязательно",
+        "cashPointNameRequired": "Требуется название кассовой точки",
         "cashPointSaved": "Кассовая точка успешно сохранена.",
         "cashPointUuid": "UUID кассовой точки",
         "cashPointUuidPlaceholder": "Введите UUID",
         "checkFilters": "Проверьте фильтры выше",
+        "childUnder5": "Ребёнок до 5 лет",
+        "clearSearch": "Очистить",
         "confirmDeleteMessage": "Вы уверены, что хотите удалить этот способ оплаты? Действуйте осторожно.",
         "cumulativeBills": "Накопленные счета",
         "currentPrice": "Текущая цена",
         "date": "Дата",
         "dateAndTime": "Дата и время",
         "dateOfPayment": "Дата оплаты",
+        "deleteBillLineItem": "Удалить эту позицию счёта",
+        "deleteConfirmation": "Вы уверены, что хотите удалить эту позицию?",
+        "deleteFailedTryAgain": "Не удалось удалить позицию. Попробуйте ещё раз.",
+        "deleteLineItem": "Удалить позицию",
         "deletePaymentMode": "Удалить способ оплаты",
         "deleting": "Удаление",
         "description": "Описание",
-        "descriptionPlaceholder": "Например, используется для всех наличных операций",
+        "descriptionPlaceholder": "Например, Используется для всех наличных операций",
         "discard": "Отменить",
         "discount": "Скидка",
-        "discountAmount": "Сумма скидки",
         "editBillableService": "Редактировать платную услугу",
         "editBillLineItem": "Редактировать позицию счёта",
         "editPaymentMode": "Редактировать способ оплаты",
         "editThisBillItem": "Редактировать эту позицию счёта",
         "enterAmount": "Введите сумму",
-        "enterReferenceNumber": "Введите референсный номер",
-        "enterSellingPrice": "Введите продажную цену",
+        "enterReferenceNumber": "Введите номер ссылки",
+        "enterSellingPrice": "Введите цену продажи",
         "enterServiceName": "Введите название услуги",
         "enterServiceShortName": "Введите краткое название услуги",
         "errorCreatingBill": "Произошла ошибка при создании счёта",
@@ -1044,134 +1056,147 @@
         "errorFetchingCashPoints": "Произошла ошибка при загрузке кассовых точек.",
         "errorFetchingLocations": "Произошла ошибка при загрузке местоположений.",
         "errorLoadingBillableServices": "Ошибка загрузки платных услуг",
-        "errorLoadingBillServices": "Ошибка загрузки биллинговых услуг",
+        "errorLoadingBillServices": "Ошибка загрузки услуг биллинга",
         "errorLoadingPaymentModes": "Ошибка загрузки способов оплаты",
         "errorPrintingInvoice": "Ошибка печати счёта-фактуры",
-        "errorProcessingPayment": "Ошибка обработки платежа",
+        "errorProcessingPayment": "Ошибка обработки оплаты",
         "errorSavingCashPoint": "Произошла ошибка при сохранении кассовой точки.",
         "errorSavingPaymentMode": "Произошла ошибка при сохранении способа оплаты.",
+        "filterBillsByPatient": "Фильтр счетов по имени или идентификатору пациента",
         "filterBy": "Фильтр:",
-        "filterTable": "Фильтровать таблицу",
+        "filterTable": "Фильтр таблицы",
         "gender": "Пол",
         "grandTotal": "Общая сумма",
         "home": "Главная",
         "identifier": "Идентификатор",
-        "insuranceScheme": "Страховая программа",
+        "insuranceScheme": "Программа страхования",
         "invalidUuidFormat": "Неверный формат UUID",
-        "invalidWaiverAmount": "Недопустимая сумма списания",
-        "inventoryItem": "Позиция складского учёта",
+        "invalidWaiverAmount": "Неверная сумма списания",
+        "inventoryItem": "Позиция номенклатуры",
         "invoice": "Счёт-фактура",
         "invoiceDate": "Дата счёта-фактуры",
         "invoiceError": "Ошибка счёта-фактуры",
         "invoiceLineItems": "Позиции счёта-фактуры",
-        "invoiceNumber": "Счёт №",
+        "invoiceNumber": "Счёт-фактура №",
         "invoiceStatus": "Статус счёта-фактуры",
+        "invoiceSummary": "Итог счёта-фактуры",
         "item": "Позиция",
         "itemsToBeBilled": "Позиции к выставлению",
-        "launchBillForm": "Открыть форму выставления счёта",
-        "lineItems": "Позиции счёта",
+        "lineItemDeleted": "Позиция удалена",
+        "lineItemDeleteFailed": "Не удалось удалить позицию",
+        "lineItemDeleteSuccess": "Позиция счёта успешно удалена",
+        "lineItems": "Позиции",
         "lineItemUpdated": "Позиция обновлена",
         "lineItemUpdateErrorDefault": "Не удалось обновить позицию счёта. Попробуйте ещё раз.",
         "lineItemUpdateFailed": "Не удалось обновить позицию",
         "lineItemUpdateSuccess": "Позиция счёта успешно обновлена",
         "loading": "Загрузка данных",
         "loadingBillInfo": "Загрузка информации о счёте",
-        "loadingBillingServices": "Загрузка биллинговых услуг",
+        "loadingBillingServices": "Загрузка услуг биллинга",
         "loadingBillItems": "Загрузка позиций счёта",
         "loadingBillMetrics": "Загрузка метрик счетов",
         "loadingDescription": "Загрузка",
         "location": "Местоположение",
-        "locationRequired": "Местоположение обязательно",
+        "locationRequired": "Требуется указать местоположение",
         "manageBillableServices": "Управление платными услугами",
         "name": "Название",
         "nextPage": "Следующая страница",
+        "no": "Нет",
+        "noBillsToDisplay": "Нет счетов для отображения.",
         "noBillToDisplay": "Нет счетов для отображения у этого пациента",
-        "noMatchingBillsToDisplay": "Нет подходящих счетов",
-        "noMatchingItemsToDisplay": "Нет подходящих позиций",
-        "noMatchingServicesToDisplay": "Нет подходящих услуг",
+        "noMatchingBillsToDisplay": "Нет подходящих счетов для отображения",
+        "noMatchingItemsToDisplay": "Нет подходящих позиций для отображения",
+        "noMatchingServicesToDisplay": "Нет подходящих услуг для отображения",
+        "nonPaying": "Не платный",
         "noResultsFor": "Нет результатов для {{searchTerm}}",
         "number": "Номер",
-        "ok": "ОК",
+        "ok": "OK",
         "paidBills": "Оплаченные счета",
         "patientBill": "Счёт пациента",
-        "patientBillingAlert": "Уведомление о счёте пациента",
+        "patientBillingAlert": "Предупреждение о биллинге пациента",
         "patientBills": "Счета пациента",
         "patientBillsDescription": "Список счетов пациента",
         "patientCategory": "Категория пациента",
+        "patientIdentifier": "Идентификатор пациента",
+        "patientInformation": "Информация о пациенте",
+        "patientName": "Имя пациента",
+        "paying": "Платный",
         "paymentAmountCannotExceedAmountDue": "Сумма оплаты не может превышать сумму к оплате",
         "paymentDetails": "Детали оплаты",
-        "paymentMethod": "Способ оплаты",
-        "paymentMethodRequired": "Способ оплаты обязателен для всех позиций",
-        "paymentMethods": "Способы оплаты",
-        "paymentMode": "Режим оплаты",
+        "paymentHistory": "История оплат",
+        "paymentMethod": "Метод оплаты",
+        "paymentMethodRequired": "Требуется указать метод оплаты для всех позиций",
+        "paymentMode": "Способ оплаты",
         "paymentModeDeleted": "Способ оплаты успешно удалён.",
         "paymentModeHistory": "История способа оплаты",
         "paymentModeNameLabel": "Название способа оплаты",
-        "paymentModeNamePlaceholder": "Например, Наличные, Кредитная карта",
-        "paymentModeNameRequired": "Название способа оплаты обязательно",
+        "paymentModeNamePlaceholder": "Например, Наличные, Банковская карта",
+        "paymentModeNameRequired": "Требуется название способа оплаты",
         "paymentModeNameToDelete": "Название способа оплаты: {{paymentModeName}}",
-        "paymentModeRequired": "Способ оплаты обязателен",
+        "paymentModeRequired": "Требуется способ оплаты",
         "paymentModeSaved": "Способ оплаты успешно сохранён.",
-        "paymentModesConfig": "Настройка способов оплаты",
+        "paymentModesConfig": "Конфигурация способов оплаты",
         "paymentOptionRequired": "Требуется хотя бы один вариант оплаты",
-        "paymentProcessedSuccessfully": "Платёж успешно обработан",
-        "payments": "Платежи",
+        "paymentProcessedSuccessfully": "Оплата успешно обработана",
+        "payments": "Оплаты",
         "pendingBills": "Неоплаченные счета",
         "policyNumber": "Номер полиса",
-        "postWaiver": "Выполнить списание",
+        "postWaiver": "После списания",
         "previousPage": "Предыдущая страница",
         "price": "Цена",
-        "priceIsRequired": "Цена обязательна",
+        "priceIsRequired": "Требуется указать цену",
         "priceMustBeNumber": "Цена должна быть числом",
         "priceMustBePositive": "Цена должна быть больше 0",
         "prices": "Цены",
         "printBill": "Печать счёта",
         "printReceipt": "Печать квитанции",
-        "processPayment": "Обработать платёж",
+        "processPayment": "Обработать оплату",
         "quantity": "Количество",
         "quantityCannotExceed100": "Количество не может превышать 100",
         "quantityMustBeAtLeastOne": "Количество должно быть не менее 1",
         "quantityMustBeInteger": "Количество должно быть целым числом",
         "quantityMustBeNumber": "Количество должно быть числом",
-        "quantityRequired": "Количество обязательно",
-        "referenceNumber": "Референсный номер",
+        "quantityRequired": "Требуется указать количество",
+        "referenceNumber": "Номер ссылки",
         "remove": "Удалить",
-        "removePaymentMethod": "Удалить способ оплаты",
+        "removePaymentMethod": "Удалить метод оплаты",
         "saveAndClose": "Сохранить и закрыть",
-        "saveBill": "Сохранить счёт",
         "saving": "Сохранение",
-        "searchConcepts": "Поиск связанного концепта",
+        "searchConcepts": "Поиск связанной концепции",
+        "searchForPatient": "Поиск пациента по имени",
         "searching": "Поиск",
         "searchItems": "Поиск позиций и услуг",
-        "searchThisTable": "Поиск по таблице",
+        "searchThisTable": "Поиск в этой таблице",
         "selectBillableService": "Выберите платную услугу",
         "selectedItems": "Выбранные позиции",
         "selectLocation": "Выберите местоположение",
         "selectPatientCategory": "Выберите категорию пациента",
-        "selectPaymentMethod": "Выберите способ оплаты",
-        "selectPaymentMode": "Выберите режим оплаты",
+        "selectPaymentMethod": "Выберите метод оплаты",
+        "selectPaymentMode": "Выберите способ оплаты",
         "selectServiceType": "Выберите тип услуги",
-        "sellingPrice": "Продажная цена",
+        "sellingPrice": "Цена продажи",
         "serviceList": "Список услуг",
         "serviceName": "Название услуги",
         "serviceNameExceedsLimit": "Название услуги не может превышать {{MAX_NAME_LENGTH}} символов",
-        "serviceNameRequired": "Название услуги обязательно",
+        "serviceNameRequired": "Требуется название услуги",
         "servicesList": "Список услуг",
         "serviceStatus": "Статус услуги",
         "serviceType": "Тип услуги",
-        "serviceTypeRequired": "Тип услуги обязателен",
+        "serviceTypeRequired": "Требуется тип услуги",
         "shortName": "Краткое название",
         "shortNameExceedsLimit": "Краткое название не может превышать {{MAX_NAME_LENGTH}} символов",
         "status": "Статус услуги",
+        "student": "Студент",
         "submitting": "Отправка",
         "success": "Успешно",
         "total": "Итого",
         "totalAmount": "Общая сумма",
+        "totalPaid": "Всего оплачено",
         "totalTendered": "Всего внесено",
         "unitPrice": "Цена за единицу",
         "unitPriceHelperText": "Это цена за единицу данной позиции",
         "uuid": "UUID",
-        "uuidRequired": "UUID обязателен",
+        "uuidRequired": "Требуется UUID",
         "validationError": "Ошибка валидации",
         "visitTime": "Время визита",
         "waiverForm": "Форма списания"
@@ -1179,7 +1204,8 @@
     }
   },
   "@openmrs/esm-styleguide": {
-    "Brand color #1": "#005d5d"
+    "Brand color #1": "#0059ff"
+
   },
   "@openmrs/esm-appointments-app": {
     "Translation overrides": {
@@ -1417,6 +1443,10 @@
     }
   },
   "@openmrs/esm-login-app": {
+    "logo": {
+      "src": "${openmrsSpaBase}/login-logo.png",
+      "alt": "company logo"
+    },
     "Translation overrides": {
       "en": {
         "builtWith": "Создано с помощью",
@@ -1462,6 +1492,11 @@
     }
   },
   "@openmrs/esm-patient-vitals-app": {
+    "vitals": {
+      "logo": {
+        "src": "${openmrsSpaBase}/patient-chart-logo.png"
+      }
+    },
     "Translation overrides": {
       "en": {
         "abnormalValue": "Отклонение от нормы",
@@ -1595,7 +1630,7 @@
         "bedCreated": "Койка успешно создана",
         "bedCreateError": "Ошибка при создании койки",
         "bedId": "ID койки",
-        "bedManagement": "Управление коечным фондом",
+        "bedManagement": "Управление паратами",
         "bedManagementLeftPanel": "Левая панель управления койками",
         "bedName": "Название койки",
         "bedNamePlaceholder": "Название этой койки",
@@ -2340,6 +2375,16 @@
     }
   },
   "@openmrs/esm-patient-banner-app": {
+    "printPatientSticker": {
+      "header": {
+        "showBarcode": true,
+        "showLogo": true,
+        "logo": {
+          "src": "${openmrsSpaBase}/login-logo.png",
+          "alt": "company logo"
+        }
+      }
+    },
     "Translation overrides": {
       "en": {
         "activeVisit": "Текущий приём",
@@ -3034,6 +3079,18 @@
     }
   },
   "@openmrs/esm-primary-navigation-app": {
+    "logo": {
+      "src": "${openmrsSpaBase}/logo.png",
+      "alt": "company logo"
+    },
+    "extensionSlots": {
+      "user-panel-slot": {
+        "remove": ["change-language"]
+      },
+      "top-nav-actions-slot": {
+        "remove": ["implementer-tools-button"]
+      }
+    },
     "Translation overrides": {
       "en": {
         "AppMenuTooltip": "Меню приложений",
@@ -3051,48 +3108,121 @@
       }
     }
   },
-  "@openmrs/esm-reports-app": {
+  "core": {
     "Translation overrides": {
+      "en": {
+        "actionableNotification": "Уведомление с действием",
+        "actions": "Действия",
+        "address": "Адрес",
+        "address1": "Адресная строка 1",
+        "address2": "Адресная строка 2",
+        "address3": "Адресная строка 3",
+        "address4": "Адресная строка 4",
+        "address5": "Адресная строка 5",
+        "address6": "Адресная строка 6",
+        "age": "Возраст",
+        "cancel": "Отмена",
+        "change": "Изменить",
+        "city": "Город",
+        "cityVillage": "Город/Населённый пункт",
+        "Clinic": "Клиника",
+        "close": "Закрыть",
+        "closeAllOpenedWorkspaces": "Отменить изменения в {{count}} рабочих областях",
+        "closesActionableNotification": "Закрывает уведомление с действием",
+        "closeSnackbar": "Закрыть уведомление",
+        "closeWorkspaces2PromptBody": "Вы собираетесь закрыть следующие рабочие области, в которых могут быть несохранённые изменения:",
+        "closeWorkspaces2PromptTitle": "Закрыть рабочие области",
+        "closingAllWorkspacesPromptBody": "В следующих рабочих областях могут быть несохранённые изменения. Хотите отменить изменения в этих областях? {{workspaceNames}}",
+        "closingAllWorkspacesPromptTitle": "Есть несохранённые изменения",
+        "confirm": "Подтвердить",
+        "contactAdministratorIfIssuePersists": "Обратитесь к администратору системы, если проблема не исчезнет.",
+        "contactDetails": "Контактные данные",
+        "country": "Страна",
+        "countyDistrict": "Район",
+        "delete": "Удалить",
+        "discard": "Отменить",
+        "discardChanges": "Отменить изменения",
+        "district": "Район",
+        "edit": "Редактировать",
+        "error": "Ошибка",
+        "errorCopy": "К сожалению, возникла проблема при отображении этой информации. Попробуйте перезагрузить страницу или обратитесь к администратору системы, указав код ошибки выше.",
+        "errorLoadingLoginLocations": "Не удалось загрузить места входа. Попробуйте ещё раз или обратитесь в службу поддержки, если проблема сохраняется.",
+        "female": "Женский",
+        "hide": "Скрыть",
+        "leftNavigation": "Левая навигация",
+        "loading": "Загрузка",
+        "male": "Мужской",
+        "maximize": "Развернуть",
+        "minimize": "Свернуть",
+        "noResultsToDisplay": "Нет результатов для отображения",
+        "openAnyway": "Открыть всё равно",
+        "other": "Другое",
+        "patientAvatarAlt": "Аватар для {{patientName}}",
+        "patientIdentifierSticker": "Стикер с идентификатором пациента",
+        "patientLists": "Списки пациентов",
+        "patientPhotoAlt": "Фотография профиля {{patientName}}",
+        "patientPhotoPlaceholder": "Заглушка фотографии для {{patientName}}",
+        "postalCode": "Почтовый индекс",
+        "print": "Печать",
+        "printError": "Ошибка печати",
+        "printErrorExplainer": "Произошла ошибка в {{errorLocation}}",
+        "printIdentifierSticker": "Печать стикера с идентификатором",
+        "printing": "Печать",
+        "relationships": "Родственные связи",
+        "resetOverrides": "Сбросить переопределения",
+        "save": "Сохранить",
+        "scriptLoadingError": "Не удалось загрузить переопределённый скрипт из {{url}}. Проверьте, доступен ли собранный скрипт по указанному URL. Нажмите кнопку ниже, чтобы сбросить все переопределения карты импорта.",
+        "scriptLoadingFailed": "Ошибка: Не удалось загрузить скрипт",
+        "searchForLocation": "Поиск местоположения",
+        "seeMoreLists": "Показать ещё {{count}} списков",
+        "sex": "Пол",
+        "showLess": "Свернуть",
+        "showMore": "Развернуть",
+        "snackbarNotification": "Уведомление в snackbar",
+        "state": "Регион",
+        "stateProvince": "Регион/Область",
+        "toggleDevTools": "Переключить инструменты разработчика",
+        "unknown": "Неизвестно",
+        "unsavedChangesInOpenedWorkspace": "В открытой рабочей области могут быть несохранённые изменения. Хотите отменить эти изменения?",
+        "unsavedChangesInWorkspace": "В рабочей области «{{workspaceName}}» могут быть несохранённые изменения. Сохраните их перед открытием другой области.",
+        "unsavedChangesTitleText": "Несохранённые изменения",
+        "workspaceHeader": "Заголовок рабочей области",
+        "yearAbbreviation": "г.",
+        "yearsAbbreviation": "лет"
+      }
     }
+  },
+  "@openmrs/esm-reports-app": {
+    "Translation overrides": {}
   },
   "@openmrs/esm-stock-management-app": {
-    "Translation overrides": {
-    }
+    "Translation overrides": {}
   },
   "@openmrs/esm-system-admin-app": {
-    "Translation overrides": {
-    }
+    "Translation overrides": {}
   },
   "@openmrs/esm-user-onboarding-app": {
-    "Translation overrides": {
-    }
+    "Translation overrides": {}
   },
   "@openmrs/esm-cohort-builder-app": {
-    "Translation overrides": {
-    }
+    "Translation overrides": {}
   },
   "@openmrs/esm-devtools-app": {
-    "Translation overrides": {
-    }
+    "Translation overrides": {}
   },
   "@openmrs/esm-generic-patient-widgets-app": {
-    "Translation overrides": {
-    }
+    "Translation overrides": {}
   },
   "@openmrs/esm-help-menu-app": {
-    "Translation overrides": {
-    }
+    "Translation overrides": {}
   },
   "@openmrs/esm-implementer-tools-app": {
-    "Translation overrides": {
-    }
+    "Translation overrides": {}
   },
   "@openmrs/esm-patient-label-printing-app": {
-    "Translation overrides": {
-    }
+    "Translation overrides": {}
   },
   "@openmrs/esm-openconceptlab-app": {
-    "Translation overrides": {
-    }
+    "Translation overrides": {}
   }
 }
